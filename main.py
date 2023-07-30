@@ -7,7 +7,7 @@ import datetime
 import openai
 import requests
 import json
-from api_key import apikey
+from api_key import apikey , weather_api
 import geonamescache
 import time
 import re
@@ -121,7 +121,7 @@ def weather(message):
             pass 
     
     try:
-        url=f"http://api.weatherapi.com/v1/current.json?key=7e76bbb4196f47ad940193323232807&q={messagecity}"
+        url=f"http://api.weatherapi.com/v1/current.json?key={weather_api}&q={messagecity}"
 
         respone=requests.get(url)
         wdict=json.loads(respone.text)
