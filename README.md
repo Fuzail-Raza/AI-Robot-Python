@@ -17,22 +17,22 @@ The chatbot can provide real-time weather information for various cities using t
 ### Chatting:
 The chatbot uses the OpenAI GPT-3.5 Turbo model to engage in natural language conversation with users.
 ## Dependencies
-Python 3.6+
-speech_recognition
-win32com.client
-webbrowser
-os
-datetime
-openai
-requests
-json
-geonamescache
-time
-re
-winsound
-win10toast
-pytube
-vlc
+Python 3.6+   
+speech_recognition   
+win32com.client   
+webbrowser   
+os   
+datetime    
+openai   
+requests   
+json   
+geonamescache   
+time   
+re   
+winsound   
+win10toast    
+pytube    
+vlc  
 ## How to Use
 1. Install the required dependencies by running the following command:
 #### pip install -r requirements.txt
