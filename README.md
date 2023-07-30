@@ -42,19 +42,19 @@ vlc
 #### python main.py
 Start interacting with the AI robot by speaking your queries. The robot will respond to your voice commands accordingly.
 ## Commands
-"Open YouTube" - Opens YouTube in a web browser.
-"Open Wikipedia" - Opens Wikipedia in a web browser.
-"Open Google" - Opens Google in a web browser.
-"Open Instagram" - Opens Instagram in a web browser.
-"Open Music" - Opens a music file path (replace the path in the code).
-"What is the time?" - Returns the current time.
-"Intelligence" - Initiates a natural language conversation with the chatbot using the GPT-3.5 Turbo model.
-"Youtube Video" - Plays a YouTube video. Enter the URL when prompted.
-"Jarvis Quit" - Exits the voice assistant.
-"Set a reminder for 1 hour" - Sets a reminder for the specified time unit (hours, minutes, or seconds).
-"Weather in city_name" - Provides real-time weather information for the specified city.
-"Reset chat" - Clears the chat history.
-"Chatting" - Initiates an extended conversation with the chatbot.
+"Open YouTube" - Opens YouTube in a web browser.  
+"Open Wikipedia" - Opens Wikipedia in a web browser.  
+"Open Google" - Opens Google in a web browser.   
+"Open Instagram" - Opens Instagram in a web browser.  
+"Open Music" - Opens a music file path (replace the path in the code).   
+"What is the time?" - Returns the current time.  
+"Intelligence" - Initiates a natural language conversation with the chatbot using the GPT-3.5 Turbo model.  
+"Youtube Video" - Plays a YouTube video. Enter the URL when prompted.  
+"Jarvis Quit" - Exits the voice assistant.  
+"Set a reminder for 1 hour" - Sets a reminder for the specified time unit (hours, minutes, or seconds).  
+"Weather in city_name" - Provides real-time weather information for the specified city.  
+"Reset chat" - Clears the chat history.  
+"Chatting" - Initiates an extended conversation with the chatbot.  
 ## Contributions
 Contributions to this project are welcome. If you find any issues or want to add new features, feel free to open an issue or submit a pull request.
 #### owner-mail:fuzailraza161@gmail.com
