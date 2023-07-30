@@ -285,7 +285,7 @@ if __name__=="__main__":
                 time.sleep(10)
 
         if "Open Music".lower() in text:
-            musicpath="G:\F\Sita.Ramam.(2022).Hindi.Dubbed.720p.WEB-DL.ESub.Plexmovies.xyz.mkv"
+            musicpath="G:\F\abc.xyz"
             os.system(f"start {musicpath}")
         elif "time".lower() in text:
             time=datetime.datetime.now().strftime("%H:%M:%S")
