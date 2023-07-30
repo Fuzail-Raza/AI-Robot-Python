@@ -13,6 +13,8 @@
 __pycache__
 api_key
 api_key.py
+.gitattributes
+myfiles
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
