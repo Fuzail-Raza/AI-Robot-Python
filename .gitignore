@@ -9,7 +9,10 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+.gitignore
+__pycache__
+api_key
+api_key.py
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
