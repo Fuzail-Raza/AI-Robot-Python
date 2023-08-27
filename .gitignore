@@ -13,6 +13,7 @@
 __pycache__
 api_key
 api_key.py
+api_keys.py
 .gitattributes
 myfiles
 text.py
