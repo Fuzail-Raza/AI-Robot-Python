@@ -15,6 +15,7 @@ api_key
 api_key.py
 .gitattributes
 myfiles
+text.py
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
