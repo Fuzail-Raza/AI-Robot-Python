@@ -7,7 +7,7 @@ import datetime
 import openai
 import requests
 import json
-from api_key import apikey , weather_api
+from api_keys import apikey , weather_api
 import geonamescache
 import time
 import re
