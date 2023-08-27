@@ -113,7 +113,7 @@ def retrieve():
 
     try:
         client.admin.command('ping')
-    except Exception as e
+    except Exception as e:
         print(e)
         
     
