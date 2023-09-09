@@ -18,6 +18,7 @@ api_keys.py
 myfiles
 text.py
 api_key.py
+doc.py
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
