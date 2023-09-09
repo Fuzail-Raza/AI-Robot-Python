@@ -19,6 +19,8 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from api_keys import MongoDBURL
 import uuid
+import threading
+
 
 
 def word_to_number(word):
@@ -103,6 +105,7 @@ def set_reminder(message):
             duration = 1000
             winsound.Beep(frequency, duration)
             say(f"Take Rest... Please Take a rest for while you are using laptop for {time_now} {unit} with no break")
+            time.sleep(2)
             break
 
 
@@ -274,10 +277,10 @@ def say(text):
 i=0
 def take_command():
     global i
-    i=i+1
-    if(i==2):
+    # i=i+1
+    if(i>3):
         return "Quit"
-    return "Intelligence write a offer letter of HR Job"
+    return input()
     r=sr.Recognizer()
     with sr.Microphone() as source:
         r.pause_threshold=1
@@ -299,7 +302,7 @@ def bye():
     elif int(hour)>12 and int(hour)<=18:
         print("Good Bye Sir... Have a Nice Evening!")
         say("Good Bye Sir... Have a Nice Evening!")
-    elif  int(hour)>18:
+    elif  int(hour)>18 or int(hour)<6:
         print("Good Bye Sir... Good Night!")
         say("Good Bye Sir... Good Night!")
 
@@ -331,7 +334,9 @@ if __name__=="__main__":
             bye()
             exit()
         elif ("alarm".lower())  in text.lower():
-            set_reminder(text)
+            t1=threading.Thread(target=set_reminder,args=[text])
+            t1.start()
+            time.sleep(2)
         elif "reset chat".lower() in text.lower():
             chatStr = ""
         elif "weather".lower() in text.lower():
