@@ -15,6 +15,11 @@ import winsound
 from win10toast import ToastNotifier
 from pytube import YouTube
 import vlc
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+from api_keys import MongoDBURL
+import uuid
+
 
 def word_to_number(word):
     word_dict = {
@@ -166,6 +171,25 @@ def openai_call(message):
         )
     return response['choices'][0]['text']
 
+
+def save_MongoDB(data,db,col):
+    client = MongoClient(MongoDBURL, server_api=ServerApi('1'))
+    try:
+        client.admin.command('ping')
+    except Exception as e:
+        print(e)
+    mydb = client[db]
+    mycol = mydb[col]
+    unique_id = str(uuid.uuid4())[0:13]
+    while True:
+        existing_doc = mycol.find_one({"unique_id": unique_id})
+        if existing_doc:
+            unique_id = str(uuid.uuid4())[0:13]
+        else:
+            break
+    mycol.insert_one({"UID":unique_id,"User":"Fuzail","Time":datetime.datetime.now().strftime("%H:%M:%S"),"Response":data})
+    
+
 chatStr = ""
 def chat():
     global chatStr
@@ -178,6 +202,11 @@ def chat():
                 os.mkdir(f"{current_directory}\Chatresponses")
             with open(f"{current_directory}\Chatresponses\myfile.txt","w") as s:
                 s.write(chatStr)
+                db = "Employee_Login"
+                col = "AI_Chatting"
+                save_MongoDB(chatStr,db,col)
+               
+    
             return
         chatStr += f"Fuzail: {query}\n Jarvis: "
         response=openai_call(chatStr)
@@ -188,7 +217,7 @@ def chat():
         chatStr += f"{response}\n"
         current_chat += f"{response}\n"
         print(current_chat)
-        time.sleep(10)
+        time.sleep(3)
         say(response)
 
 
@@ -206,7 +235,11 @@ def chatresponse(message):
         os.mkdir(f"{current_directory}\AIresponses")
     with open(f"{current_directory}\AIresponses\{''.join(message.lower().split('intelligence')[1:]).strip()}.txt","w") as f:
         f.write(text)
-
+        
+        db = "Employee_Login"
+        col = "AI_Responses"
+        save_MongoDB(text,db,col)
+        
     
     return response
 
@@ -242,9 +275,9 @@ i=0
 def take_command():
     global i
     i=i+1
-    if(i==4):
+    if(i==2):
         return "Quit"
-    return "Intelligence write a name of animal"
+    return "Intelligence write a offer letter of HR Job"
     r=sr.Recognizer()
     with sr.Microphone() as source:
         r.pause_threshold=1
